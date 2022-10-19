@@ -11,12 +11,13 @@ informação pro navegador) */
 /* espaço dentro de 
 uma variável:
 $cor_da_casa */
-$cor_da_casa = 'purple'
-$Cor_da_casa = 'lilaz'
-$casa_vendida = false;
+$cor_da_casa = "red"; // String
+$Cor_da_casa = 'lilaz'; // String
+$casa_vendida = true; // Booleana (true | False)
+$numero_da_casa = 25; // Number
 
 // Constante -> sem $
-define('numero_da_casa', 25);
+define('NUMERO_DA_CASA', 25);
 
 // Outra variável
 $corDaCasa = 'azul'
@@ -27,14 +28,14 @@ $corDaCasa = 'azul'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech.Novatas2</title>
+    <title>Olá mundo!</title>
 </head>
 <body>
 
-<h1>Olá mundo!</h1>
+<h1>Olá mundo do PHP!</h1>
 
 <?php // comentários de 1 linha ?>
-<?php echo 'olá mundo do php!' ?>
+<?php echo 'Olá mundo!' ?>
 
 <?php 
 
@@ -42,9 +43,9 @@ $corDaCasa = 'azul'
 de várias linhas, 
 mas deve estar dentro do 
 código PHP*/
-echo 'olá terra';
-ECHO "olá marte";
-EcHo 'olá lua'; // exibe uma string
+echo 'Olá Terra!';
+echo "Olá Marte!";
+echo 'Olá Lua!'; // exibe uma string
 echo 22.3; // exibe um número
 echo false; // exibe um booleano
 echo null; // exibe um nulo
@@ -55,7 +56,7 @@ echo null; // exibe um nulo
 <?php
 
 echo $cor_da_casa;
-echo numero_da_casa;
+echo $NUMERO_DA_CASA;
 
 if ($casa_vendida) {
     echo 'A casa foi vendida';
@@ -88,13 +89,16 @@ echo "<h2>{'$cor_da_casa'}</h2>";
 "a cor é 'azul'!";
 `a "cor" é 'azul'!`;
 
-// Escape -> "\"
-echo "<p style=\"color:red\">{$cor_da_casa}</p>";
+// quebrando linha no javascript e php -> \n
 
 // Heredoc
+// abaixo a função <<<HTML substitui a função da crase
 echo <<<HTML
 <p style="color:red">{$cor_da_casa}</p>;
 HTML
+
+// Escape -> "\"
+echo "<p style=\"color:red\">{$cor_da_casa}</p>";
 
 // Define uma função
 function soma($val1, $val2) {
