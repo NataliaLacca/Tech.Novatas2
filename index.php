@@ -1,7 +1,7 @@
 <?php
 
 // Importa a configuração do site:
-require('includes/config.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/includes/_config.php');
 
 /***************************************************
  * Todos os códigos PHP desta página INICIAM aqui! *
@@ -20,7 +20,7 @@ WHERE astatus = 'online'
     -- E somente artigos com data no passado:
     AND adate <= NOW()
 
--- Ordenado pela data de publicação mais recente:
+-- Ordenados pela data de publicação mais recente:
 ORDER BY adate DESC;
 
 SQL;
@@ -40,18 +40,19 @@ else :
     // Loop para obter cada artigo:
     while ($art = $res->fetch_assoc()) :
 
-       // Formata a lista dos artigos:
-       $page_content .= <<<HTML
+        // Formata a lista dos artigos e concatena em $page_content:
+        $page_content .= <<<HTML
 
 <div>
     <img src="{$art['thumbnail']}" alt="{$art['title']}">
-    <h3><a href="/view.php?{$art['aid']}">{$art['title']}</a></h3>
+    <h3><a href="/view/?{$art['aid']}">{$art['title']}</a></h3>
     {$art['resume']}
 </div>
 <p>------------------------</p>
 
 HTML;
 
+    // Fim do loop:
     endwhile;
 
 endif;
@@ -64,7 +65,7 @@ $page_title = 'Artigos recentes';
  ****************************************************/
 
 // Cabeçalho da página HTML:
-require('header.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/includes/_header.php');
 
 /******************************************************
  * Todo código HTML visível desta página COMEÇA aqui! *
@@ -80,5 +81,5 @@ require('header.php');
  *******************************************************/
 
 // Rodapé da página HTML:
-require('footer.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/includes/_footer.php');
 ?>
