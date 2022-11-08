@@ -1,36 +1,31 @@
 <?php
 
-// Variáveis do site:
+/**
+ * Este é o arquivo de configuração inicial do aplicativo.
+ * Ele deve ser importado com 'require()' logo no começo de todas as páginas 
+ * PHP deste site.
+ **/
+
+/**
+ * A conelçao $c[] contém diversas configurações iniciais dos site.
+ * Esta variável e suas chaves definem algumas configurações de personalização 
+ * do site como nome, logotipo e outros itens. Você pode/deve adicionar outros
+ * itens aqui, conforme sua necessidade e vontade.
+ **/
 $c = array(
     'sitename' => 'Tech.Novatas',
     'siteslogan' => 'Toda mulher é capaz de tudo, inclusive programar.',
     'sitelogo' => '/img/logo01.png',
-    'favicon' => '/img/logo01.png'
+    'favicon' => '/img/favicon.png',
+    'adminemail' => 'tech@novatas.com'
 );
 
-// Conponentes de cada página:
-$page_css = $page_js = $pagename = '';
-
-// Redes sociais:
-$social = array(
-    array( // [0]
-        'name' => 'Facebook',
-        'link' => 'https://facebook.com/Tech.Novatas',
-        'icon' => 'fa-facebook'
-    ),
-    array( // [1]
-        'name' => 'Youtube',
-        'link' => 'https://youtube.com/Tech.Novatas',
-        'icon' => 'fa-youtube'
-    ),
-    array( // [2]
-        'name' => 'GitHub',
-        'link' => 'https://github.com/Tech.Novatas',
-        'icon' => 'fa-github'
-    )
-);
-
-// Dados para conexão com MySQL/MariaDB e database:
+/**
+ * Dados para conexão com MySQL/MariaDB e database:
+ * Os dados DEFAULT abaixo são para uso no XAMPP. Quando este site for 
+ * hospedado na Internet, esses valores serão alterados e fornecidos pelo
+ * provedor de hospedagem.
+ **/
 $hostname = 'localhost';
 $username = 'root';
 $password = '';
@@ -55,5 +50,5 @@ $conn->query('SET character_set_results=utf8');
 $conn->query('SET GLOBAL lc_time_names = pt_BR');
 $conn->query('SET lc_time_names = pt_BR');
 
-// Importa a bilbioteca de funções:
+// Importa a biblioteca de funções globais:
 require('functions.php');
