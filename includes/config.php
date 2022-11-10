@@ -7,17 +7,17 @@
  **/
 
 /**
- * A conelçao $c[] contém diversas configurações iniciais dos site.
+ * A coleção $c[] contém diversas configurações iniciais do site.
  * Esta variável e suas chaves definem algumas configurações de personalização 
  * do site como nome, logotipo e outros itens. Você pode/deve adicionar outros
  * itens aqui, conforme sua necessidade e vontade.
- **/
+ **/ 
 $c = array(
     'sitename' => 'Tech.Novatas',
     'siteslogan' => 'Toda mulher é capaz de tudo, inclusive programar.',
     'sitelogo' => '/img/logo01.png',
     'favicon' => '/img/favicon.png',
-    'adminemail' => 'tech@novatas.com'
+    'sitecss' => '/style.css'
 );
 
 /**
@@ -30,6 +30,13 @@ $hostname = 'localhost';
 $username = 'root';
 $password = '';
 $database = 'technovatas';
+
+/**
+ * Variáveis do aplicativo:
+ * Todas as variáveis importantes para o aplicativo funcionar devem ser criadas
+ * e definidas aqui.
+ **/
+$page_title = $page_content = $page_css = $page_js = $tag_title = '';
 
 // Define a tabela de caracteres para UTF-8:
 header('Content-Type: text/html; charset=utf-8');
